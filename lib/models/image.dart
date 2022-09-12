@@ -17,6 +17,9 @@ class ImageItems {
 
   final String EllipsePaymentScreen = "assets/images/png/Ellipse.png";
   final String EllipseWithoutPath = "Ellipse";
+
+  final String SingPaymentScreen = "assets/images/png/google.png";
+  final String SingWithoutPath = "google";
 }
 
 class PngImage extends StatelessWidget {
