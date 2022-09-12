@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:food_app/screens/create_user_page.dart';
 import 'package:food_app/screens/delicious.dart';
 import 'package:food_app/screens/stores.dart';
 import 'package:google_fonts/google_fonts.dart';
@@ -120,7 +121,7 @@ class PaymentPage extends StatelessWidget {
                     Navigator.push(
                       context,
                       MaterialPageRoute(
-                        builder: (context) => Container(),
+                        builder: (context) => const CreateUserPage(),
                       ),
                     );
                   },

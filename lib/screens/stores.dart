@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:food_app/screens/create_user_page.dart';
 import 'package:food_app/screens/mask.dart';
 
 import '../models/image.dart';
@@ -127,7 +128,7 @@ class StoresPage extends StatelessWidget {
                     Navigator.push(
                       context,
                       MaterialPageRoute(
-                        builder: (context) => Container(),
+                        builder: (context) => const CreateUserPage(),
                       ),
                     );
                   },
