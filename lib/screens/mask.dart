@@ -19,7 +19,14 @@ class PaymentPage extends StatelessWidget {
           backgroundColor: Colors.transparent,
           actions: [
             TextButton(
-              onPressed: () {},
+              onPressed: () {
+                Navigator.push(
+                  context,
+                  MaterialPageRoute(
+                    builder: (context) => const CreateUserPage(),
+                  ),
+                );
+              },
               child: const Text(
                 "Skip",
                 style: TextStyle(
