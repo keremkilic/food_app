@@ -52,30 +52,7 @@ class _CreateUserPageState extends State<CreateUserPage> {
               child: Column(
                 crossAxisAlignment: CrossAxisAlignment.start,
                 children: [
-                  Column(
-                    crossAxisAlignment: CrossAxisAlignment.start,
-                    mainAxisAlignment: MainAxisAlignment.start,
-                    children: const [
-                      Text(
-                        "Create an account",
-                        style: TextStyle(
-                          color: Color(0xFF1C1C1C),
-                          fontWeight: FontWeight.bold,
-                          fontSize: 24,
-                        ),
-                      ),
-                      SizedBox(height: 10),
-                      Center(
-                        child: Text(
-                          "Welcome friend, enter your details so lets get \tstarted in ordering food",
-                          style: TextStyle(
-                            color: Color(0xFF1C1C1C),
-                            fontSize: 15,
-                          ),
-                        ),
-                      ),
-                    ],
-                  ),
+                  _mainText(),
                   const SizedBox(height: 30),
                   const Padding(
                     padding: EdgeInsets.only(left: 10, right: 10, bottom: 10),
@@ -226,5 +203,32 @@ class _CreateUserPageState extends State<CreateUserPage> {
             ),
           ],
         ));
+  }
+
+  Column _mainText(String value, ) {
+    return Column(
+                  crossAxisAlignment: CrossAxisAlignment.start,
+                  mainAxisAlignment: MainAxisAlignment.start,
+                  children: const [
+                    Text(
+                      "value",
+                      style: TextStyle(
+                        color: Color(0xFF1C1C1C),
+                        fontWeight: FontWeight.bold,
+                        fontSize: 24,
+                      ),
+                    ),
+                    SizedBox(height: 10),
+                    Center(
+                      child: Text(
+                        "Welcome friend, enter your details so lets get \tstarted in ordering food",
+                        style: TextStyle(
+                          color: Color(0xFF1C1C1C),
+                          fontSize: 15,
+                        ),
+                      ),
+                    ),
+                  ],
+                );
   }
 }
