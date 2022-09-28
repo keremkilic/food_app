@@ -1,25 +1,21 @@
 import 'package:flutter/material.dart';
-import 'package:food_app/screens/mask.dart';
-import 'package:food_app/screens/stores.dart';
+import 'package:food_app/screens/splash_screens/payment_page.dart';
 import 'package:google_fonts/google_fonts.dart';
 
-import '../components/input.dart';
-import '../models/image.dart';
-import 'delicious.dart';
+import '../../components/input.dart';
+import '../../models/image.dart';
 
-class CreateUserPage extends StatefulWidget {
-  const CreateUserPage({super.key});
+class ForgotPassword extends StatefulWidget {
+  const ForgotPassword({super.key});
 
   @override
-  State<CreateUserPage> createState() => _CreateUserPageState();
+  State<ForgotPassword> createState() => _ForgotPasswordState();
 }
 
-class _CreateUserPageState extends State<CreateUserPage> {
+class _ForgotPasswordState extends State<ForgotPassword> {
   @override
   Widget build(BuildContext context) {
     const emailAdresi = 'Enter Email';
-    const parola = 'Enter Password';
-    const confirmParola = 'Confirm Password';
     return Scaffold(
         appBar: AppBar(
           title: Container(height: 25, child: PngImage(path: ImageItems().LogoWithoutPath)),
@@ -52,7 +48,30 @@ class _CreateUserPageState extends State<CreateUserPage> {
               child: Column(
                 crossAxisAlignment: CrossAxisAlignment.start,
                 children: [
-                  _mainText(),
+                  Column(
+                    crossAxisAlignment: CrossAxisAlignment.start,
+                    mainAxisAlignment: MainAxisAlignment.start,
+                    children: const [
+                      Text(
+                        "Forgot password",
+                        style: TextStyle(
+                          color: Color(0xFF1C1C1C),
+                          fontWeight: FontWeight.bold,
+                          fontSize: 24,
+                        ),
+                      ),
+                      SizedBox(height: 15),
+                      Center(
+                        child: Text(
+                          "Enter your email address to request a\t password reset",
+                          style: TextStyle(
+                            color: Color(0xFF1C1C1C),
+                            fontSize: 15,
+                          ),
+                        ),
+                      ),
+                    ],
+                  ),
                   const SizedBox(height: 30),
                   const Padding(
                     padding: EdgeInsets.only(left: 10, right: 10, bottom: 10),
@@ -67,34 +86,7 @@ class _CreateUserPageState extends State<CreateUserPage> {
                   buildInput(emailAdresi, (String value) {
                     setState(() {});
                   }),
-                  const SizedBox(height: 25),
-                  const Padding(
-                    padding: EdgeInsets.only(left: 10, right: 10, bottom: 10),
-                    child: Text(
-                      "Password",
-                      style: TextStyle(
-                        color: Color(0xFF1C1C1C),
-                        fontSize: 11,
-                      ),
-                    ),
-                  ),
-                  buildInput(parola, (String value) {
-                    setState(() {});
-                  }),
-                  const SizedBox(height: 20),
-                  const Padding(
-                    padding: EdgeInsets.only(left: 10, right: 10, bottom: 10),
-                    child: Text(
-                      "Confirm Password",
-                      style: TextStyle(
-                        color: Color(0xFF1C1C1C),
-                        fontSize: 11,
-                      ),
-                    ),
-                  ),
-                  buildInput(confirmParola, (String value) {
-                    setState(() {});
-                  }),
+                  const SizedBox(height: 200),
                   Padding(
                     padding: const EdgeInsets.only(top: 40, left: 80, right: 80),
                     child: ElevatedButton(
@@ -203,32 +195,5 @@ class _CreateUserPageState extends State<CreateUserPage> {
             ),
           ],
         ));
-  }
-
-  Column _mainText(String value, ) {
-    return Column(
-                  crossAxisAlignment: CrossAxisAlignment.start,
-                  mainAxisAlignment: MainAxisAlignment.start,
-                  children: const [
-                    Text(
-                      "value",
-                      style: TextStyle(
-                        color: Color(0xFF1C1C1C),
-                        fontWeight: FontWeight.bold,
-                        fontSize: 24,
-                      ),
-                    ),
-                    SizedBox(height: 10),
-                    Center(
-                      child: Text(
-                        "Welcome friend, enter your details so lets get \tstarted in ordering food",
-                        style: TextStyle(
-                          color: Color(0xFF1C1C1C),
-                          fontSize: 15,
-                        ),
-                      ),
-                    ),
-                  ],
-                );
   }
 }

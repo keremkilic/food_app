@@ -1,21 +1,19 @@
 import 'package:flutter/material.dart';
-import 'package:food_app/screens/create_user_page.dart';
-import 'package:food_app/screens/mask.dart';
+import 'package:food_app/screens/create_reset_account/create_user_page.dart';
+import 'package:food_app/screens/splash_screens/payment_page.dart';
+import 'package:food_app/screens/splash_screens/stores_page.dart';
+import 'package:google_fonts/google_fonts.dart';
 
-import '../models/image.dart';
-import 'delicious.dart';
+import '../../models/image.dart';
 
-class StoresPage extends StatelessWidget {
-  const StoresPage({super.key});
+class DeliciousPage extends StatelessWidget {
+  const DeliciousPage({super.key});
 
   @override
   Widget build(BuildContext context) {
     return Scaffold(
         appBar: AppBar(
-          title: SizedBox(
-            height: 25,
-            child: PngImage(path: ImageItems().LogoWithoutPath),
-          ),
+          title: Container(height: 25, child: PngImage(path: ImageItems().LogoWithoutPath)),
           centerTitle: true,
           elevation: 0,
           backgroundColor: Colors.transparent,
@@ -25,7 +23,7 @@ class StoresPage extends StatelessWidget {
                 Navigator.push(
                   context,
                   MaterialPageRoute(
-                    builder: (context) => const DeliciousPage(),
+                    builder: (context) => const PaymentPage(),
                   ),
                 );
               },
@@ -39,26 +37,22 @@ class StoresPage extends StatelessWidget {
           ],
         ),
         body: Padding(
-          padding: const EdgeInsets.only(top: 49),
+          padding: const EdgeInsets.only(left: 19, right: 19, top: 40),
           child: Column(
-            mainAxisAlignment: MainAxisAlignment.spaceEvenly,
             children: [
-              const Padding(
-                padding: EdgeInsets.symmetric(horizontal: 48),
-                child: Center(
-                  child: Text(
-                    "Order from your favourite stores or vendors",
-                    style: TextStyle(
-                      color: Color(0xFF1C1C1C),
-                      fontWeight: FontWeight.bold,
-                      fontSize: 24,
-                    ),
+              const Center(
+                child: Text(
+                  "Choose from a wide range of delicious meals",
+                  style: TextStyle(
+                    color: Color(0xFF1C1C1C),
+                    fontWeight: FontWeight.bold,
+                    fontSize: 24,
                   ),
                 ),
               ),
               Padding(
-                padding: const EdgeInsets.only(left: 19, right: 19, top: 46, bottom: 45),
-                child: PngImage(path: ImageItems().StoresWithoutPath),
+                padding: const EdgeInsets.only(left: 19, right: 19, top: 40),
+                child: PngImage(path: ImageItems().DeliciousWithoutPath),
               ),
               Row(
                 mainAxisAlignment: MainAxisAlignment.center,
@@ -77,7 +71,7 @@ class StoresPage extends StatelessWidget {
                       width: 10,
                       decoration: BoxDecoration(
                         borderRadius: BorderRadius.circular(10),
-                        color: const Color(0xFF0B735F),
+                        color: const Color(0xFFC4C4C4),
                       ),
                     ),
                   ),
@@ -96,7 +90,7 @@ class StoresPage extends StatelessWidget {
                       width: 10,
                       decoration: BoxDecoration(
                         borderRadius: BorderRadius.circular(10),
-                        color: const Color(0xFFC4C4C4),
+                        color: const Color(0xFF0B735F),
                       ),
                     ),
                   ),
@@ -122,7 +116,7 @@ class StoresPage extends StatelessWidget {
                 ],
               ),
               Padding(
-                padding: const EdgeInsets.only(top: 60, left: 20, right: 20, bottom: 20),
+                padding: const EdgeInsets.only(top: 40, left: 20, right: 20, bottom: 20),
                 child: ElevatedButton(
                   onPressed: () {
                     Navigator.push(
@@ -151,33 +145,36 @@ class StoresPage extends StatelessWidget {
                   ),
                 ),
               ),
-              ElevatedButton(
-                onPressed: () {
-                  Navigator.push(
-                    context,
-                    MaterialPageRoute(
-                      builder: (context) => Container(),
+              Padding(
+                padding: const EdgeInsets.only(top: 5, left: 20, right: 20, bottom: 20),
+                child: ElevatedButton(
+                  onPressed: () {
+                    Navigator.push(
+                      context,
+                      MaterialPageRoute(
+                        builder: (context) => Container(),
+                      ),
+                    );
+                  },
+                  style: ButtonStyle(
+                    minimumSize: MaterialStateProperty.all(
+                      const Size(360, 50),
                     ),
-                  );
-                },
-                style: ButtonStyle(
-                  minimumSize: MaterialStateProperty.all(
-                    const Size(360, 50),
-                  ),
-                  padding: MaterialStateProperty.all(const EdgeInsets.all(15)),
-                  backgroundColor: MaterialStateProperty.all(
-                    const Color(0xFFFFFFFF),
-                  ),
-                  shape: MaterialStateProperty.all(
-                    RoundedRectangleBorder(
-                      borderRadius: BorderRadius.circular(15),
+                    padding: MaterialStateProperty.all(const EdgeInsets.all(15)),
+                    backgroundColor: MaterialStateProperty.all(
+                      const Color(0xFFFFFFFF),
+                    ),
+                    shape: MaterialStateProperty.all(
+                      RoundedRectangleBorder(
+                        borderRadius: BorderRadius.circular(15),
+                      ),
                     ),
                   ),
-                ),
-                child: const Text(
-                  "Login",
-                  style: TextStyle(
-                    color: Color(0xFFFA5A1E),
+                  child: const Text(
+                    "Login",
+                    style: TextStyle(
+                      color: Color(0xFFFA5A1E),
+                    ),
                   ),
                 ),
               ),

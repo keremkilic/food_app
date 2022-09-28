@@ -1,19 +1,22 @@
 import 'package:flutter/material.dart';
-import 'package:food_app/screens/create_user_page.dart';
-import 'package:food_app/screens/delicious.dart';
-import 'package:food_app/screens/stores.dart';
-import 'package:google_fonts/google_fonts.dart';
+import 'package:food_app/screens/create_reset_account/create_user_page.dart';
+import 'package:food_app/screens/login_to_my_page.dart';
+import 'package:food_app/screens/splash_screens/payment_page.dart';
 
-import '../models/image.dart';
+import '../../models/image.dart';
+import 'delicious.dart';
 
-class PaymentPage extends StatelessWidget {
-  const PaymentPage({super.key});
+class StoresPage extends StatelessWidget {
+  const StoresPage({super.key});
 
   @override
   Widget build(BuildContext context) {
     return Scaffold(
         appBar: AppBar(
-          title: Container(height: 25, child: PngImage(path: ImageItems().LogoWithoutPath)),
+          title: SizedBox(
+            height: 25,
+            child: PngImage(path: ImageItems().LogoWithoutPath),
+          ),
           centerTitle: true,
           elevation: 0,
           backgroundColor: Colors.transparent,
@@ -23,7 +26,7 @@ class PaymentPage extends StatelessWidget {
                 Navigator.push(
                   context,
                   MaterialPageRoute(
-                    builder: (context) => const CreateUserPage(),
+                    builder: (context) => const DeliciousPage(),
                   ),
                 );
               },
@@ -39,26 +42,24 @@ class PaymentPage extends StatelessWidget {
         body: Padding(
           padding: const EdgeInsets.only(top: 49),
           child: Column(
+            mainAxisAlignment: MainAxisAlignment.spaceEvenly,
             children: [
-              const Center(
-                child: Text(
-                  "Enjoy instant delivery and payment",
-                  style: TextStyle(
-                    color: Color(0xFF1C1C1C),
-                    fontWeight: FontWeight.bold,
-                    fontSize: 24,
+              const Padding(
+                padding: EdgeInsets.symmetric(horizontal: 48),
+                child: Center(
+                  child: Text(
+                    "Order from your favourite stores or vendors",
+                    style: TextStyle(
+                      color: Color(0xFF1C1C1C),
+                      fontWeight: FontWeight.bold,
+                      fontSize: 24,
+                    ),
                   ),
                 ),
               ),
               Padding(
                 padding: const EdgeInsets.only(left: 19, right: 19, top: 46, bottom: 45),
-                child: Stack(
-                  alignment: Alignment.center,
-                  children: [
-                    PngImage(path: ImageItems().EllipseWithoutPath),
-                    PngImage(path: ImageItems().PaymentWithoutPath),
-                  ],
-                ),
+                child: PngImage(path: ImageItems().StoresWithoutPath),
               ),
               Row(
                 mainAxisAlignment: MainAxisAlignment.center,
@@ -77,7 +78,7 @@ class PaymentPage extends StatelessWidget {
                       width: 10,
                       decoration: BoxDecoration(
                         borderRadius: BorderRadius.circular(10),
-                        color: const Color(0xFFC4C4C4),
+                        color: const Color(0xFF0B735F),
                       ),
                     ),
                   ),
@@ -115,7 +116,7 @@ class PaymentPage extends StatelessWidget {
                       width: 10,
                       decoration: BoxDecoration(
                         borderRadius: BorderRadius.circular(10),
-                        color: const Color(0xFF0B735F),
+                        color: const Color(0xFFC4C4C4),
                       ),
                     ),
                   ),
@@ -156,7 +157,7 @@ class PaymentPage extends StatelessWidget {
                   Navigator.push(
                     context,
                     MaterialPageRoute(
-                      builder: (context) => Container(),
+                      builder: (context) => const LoginMyPage(),
                     ),
                   );
                 },

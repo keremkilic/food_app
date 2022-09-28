@@ -1,13 +1,12 @@
 import 'package:flutter/material.dart';
-import 'package:food_app/screens/create_user_page.dart';
-import 'package:food_app/screens/mask.dart';
-import 'package:food_app/screens/stores.dart';
-import 'package:google_fonts/google_fonts.dart';
+import 'package:food_app/screens/create_reset_account/create_user_page.dart';
+import 'package:food_app/screens/splash_screens/delicious.dart';
+import 'package:food_app/screens/splash_screens/stores_page.dart';
 
-import '../models/image.dart';
+import '../../models/image.dart';
 
-class DeliciousPage extends StatelessWidget {
-  const DeliciousPage({super.key});
+class PaymentPage extends StatelessWidget {
+  const PaymentPage({super.key});
 
   @override
   Widget build(BuildContext context) {
@@ -23,7 +22,7 @@ class DeliciousPage extends StatelessWidget {
                 Navigator.push(
                   context,
                   MaterialPageRoute(
-                    builder: (context) => const PaymentPage(),
+                    builder: (context) => const CreateUserPage(),
                   ),
                 );
               },
@@ -37,12 +36,12 @@ class DeliciousPage extends StatelessWidget {
           ],
         ),
         body: Padding(
-          padding: const EdgeInsets.only(left: 19, right: 19, top: 40),
+          padding: const EdgeInsets.only(top: 49),
           child: Column(
             children: [
               const Center(
                 child: Text(
-                  "Choose from a wide range of delicious meals",
+                  "Enjoy instant delivery and payment",
                   style: TextStyle(
                     color: Color(0xFF1C1C1C),
                     fontWeight: FontWeight.bold,
@@ -51,8 +50,14 @@ class DeliciousPage extends StatelessWidget {
                 ),
               ),
               Padding(
-                padding: const EdgeInsets.only(left: 19, right: 19, top: 40),
-                child: PngImage(path: ImageItems().DeliciousWithoutPath),
+                padding: const EdgeInsets.only(left: 19, right: 19, top: 46, bottom: 45),
+                child: Stack(
+                  alignment: Alignment.center,
+                  children: [
+                    PngImage(path: ImageItems().EllipseWithoutPath),
+                    PngImage(path: ImageItems().PaymentWithoutPath),
+                  ],
+                ),
               ),
               Row(
                 mainAxisAlignment: MainAxisAlignment.center,
@@ -90,7 +95,7 @@ class DeliciousPage extends StatelessWidget {
                       width: 10,
                       decoration: BoxDecoration(
                         borderRadius: BorderRadius.circular(10),
-                        color: const Color(0xFF0B735F),
+                        color: const Color(0xFFC4C4C4),
                       ),
                     ),
                   ),
@@ -109,14 +114,14 @@ class DeliciousPage extends StatelessWidget {
                       width: 10,
                       decoration: BoxDecoration(
                         borderRadius: BorderRadius.circular(10),
-                        color: const Color(0xFFC4C4C4),
+                        color: const Color(0xFF0B735F),
                       ),
                     ),
                   ),
                 ],
               ),
               Padding(
-                padding: const EdgeInsets.only(top: 40, left: 20, right: 20, bottom: 20),
+                padding: const EdgeInsets.only(top: 60, left: 20, right: 20, bottom: 20),
                 child: ElevatedButton(
                   onPressed: () {
                     Navigator.push(
@@ -145,36 +150,33 @@ class DeliciousPage extends StatelessWidget {
                   ),
                 ),
               ),
-              Padding(
-                padding: const EdgeInsets.only(top: 5, left: 20, right: 20, bottom: 20),
-                child: ElevatedButton(
-                  onPressed: () {
-                    Navigator.push(
-                      context,
-                      MaterialPageRoute(
-                        builder: (context) => Container(),
-                      ),
-                    );
-                  },
-                  style: ButtonStyle(
-                    minimumSize: MaterialStateProperty.all(
-                      const Size(360, 50),
+              ElevatedButton(
+                onPressed: () {
+                  Navigator.push(
+                    context,
+                    MaterialPageRoute(
+                      builder: (context) => Container(),
                     ),
-                    padding: MaterialStateProperty.all(const EdgeInsets.all(15)),
-                    backgroundColor: MaterialStateProperty.all(
-                      const Color(0xFFFFFFFF),
-                    ),
-                    shape: MaterialStateProperty.all(
-                      RoundedRectangleBorder(
-                        borderRadius: BorderRadius.circular(15),
-                      ),
+                  );
+                },
+                style: ButtonStyle(
+                  minimumSize: MaterialStateProperty.all(
+                    const Size(360, 50),
+                  ),
+                  padding: MaterialStateProperty.all(const EdgeInsets.all(15)),
+                  backgroundColor: MaterialStateProperty.all(
+                    const Color(0xFFFFFFFF),
+                  ),
+                  shape: MaterialStateProperty.all(
+                    RoundedRectangleBorder(
+                      borderRadius: BorderRadius.circular(15),
                     ),
                   ),
-                  child: const Text(
-                    "Login",
-                    style: TextStyle(
-                      color: Color(0xFFFA5A1E),
-                    ),
+                ),
+                child: const Text(
+                  "Login",
+                  style: TextStyle(
+                    color: Color(0xFFFA5A1E),
                   ),
                 ),
               ),
